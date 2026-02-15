@@ -14,6 +14,7 @@ import { auditLogger } from './middleware/auditLogger';
 // Importar rotas
 import authRoutes from './routes/auth';
 import userRoutes from './routes/users';
+import dashboardRoutes from './routes/dashboard';
 import ruralPropertyRoutes from './routes/ruralProperties';
 import urbanPropertyRoutes from './routes/urbanProperties';
 import diagnosticRoutes from './routes/diagnostics';
@@ -66,6 +67,7 @@ app.get('/health', (req, res) => {
 // Rotas da API
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/rural-properties', ruralPropertyRoutes);
 app.use('/api/urban-properties', urbanPropertyRoutes);
 app.use('/api/diagnostics', diagnosticRoutes);

@@ -1,9 +1,18 @@
 import express from 'express';
+import { ruralPropertiesController } from '../controllers/ruralPropertiesController';
+import { authenticate } from '../middleware/auth';
+
 const router = express.Router();
 
-// TODO: Implementar rotas de propriedades rurais
-router.get('/', (req, res) => {
-  res.json({ message: 'Rural properties routes - TODO' });
-});
+// Aplicar autenticação em todas as rotas
+router.use(authenticate);
+
+// Rotas de propriedades rurais
+router.get('/', ruralPropertiesController.getAll);
+router.get('/:id', ruralPropertiesController.getById);
+router.post('/', ruralPropertiesController.create);
+router.put('/:id', ruralPropertiesController.update);
+router.delete('/:id', ruralPropertiesController.delete);
+router.get('/:id/dashboard', ruralPropertiesController.getDashboard);
 
 export default router;

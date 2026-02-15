@@ -53,20 +53,30 @@ export const auditLogger = async (req: Request, res: Response, next: NextFunctio
         // Determinar ação baseada no método HTTP e status
         let action = getActionFromRequest(req.method, res.statusCode, req.path);
         
-        // Salvar no banco de dados
-        await db.query(
-          `INSERT INTO audit_logs (user_id, action, resource_type, resource_id, details, ip_address, user_agent) 
-           VALUES ($1, $2, $3, $4, $5, $6, $7)`,
-          [
-            req.user?.id || null,
-            action,
-            resourceType,
-            resourceId,
-            auditData,
-            req.ip,
-            req.get('User-Agent')
-          ]
-        );
+        // Salvar no banco de dados (desabilitado temporariamente para dados mock)
+        // await db.query(
+        //   `INSERT INTO audit_logs (user_id, action, resource_type, resource_id, details, ip_address, user_agent) 
+        //    VALUES ($1, $2, $3, $4, $5, $6, $7)`,
+        //   [
+        //     req.user?.id || null,
+        //     action,
+        //     resourceType,
+        //     resourceId,
+        //     auditData,
+        //     req.ip,
+        //     req.get('User-Agent')
+        //   ]
+        // );
+        
+        // Mock log para desenvolvimento
+        console.log('Audit Log (Mock):', {
+          userId: req.user?.id || null,
+          action,
+          resourceType,
+          resourceId,
+          details: auditData,
+          ip: req.ip
+        });
         
         // Log também via Winston para backup
         auditLog(

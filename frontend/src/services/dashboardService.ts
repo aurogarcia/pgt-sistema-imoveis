@@ -3,9 +3,14 @@ import { DashboardStats, StateComparison } from '../types';
 
 class DashboardService {
   // Obter estatísticas do dashboard
-  async getDashboardStats(): Promise<DashboardStats> {
+  async getDashboardStats() {
     const response = await api.get('/dashboard/stats');
     return response.data;
+  }
+
+  // Alias para compatibilidade
+  async getStats() {
+    return this.getDashboardStats();
   }
 
   // Obter comparação entre estados (RJ vs ES)

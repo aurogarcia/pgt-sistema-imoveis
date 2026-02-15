@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { logger } from '../utils/logger';
-import db from '../utils/database';
+import { mockDatabase } from '../models';
 
 interface JwtPayload {
   userId: string;
@@ -25,7 +25,7 @@ declare global {
   }
 }
 
-export const authenticateToken = async (req: Request, res: Response, next: NextFunction) => {
+export const authenticateToken = (req: Request, res: Response, next: NextFunction) => {
   try {
     const authHeader = req.headers.authorization;
     const token = authHeader && authHeader.split(' ')[1];
@@ -37,36 +37,28 @@ export const authenticateToken = async (req: Request, res: Response, next: NextF
       });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as JwtPayload;
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'default_secret') as JwtPayload;
     
-    // Verificar se o usuário ainda existe e está ativo
-    const userResult = await db.query(
-      'SELECT id, email, user_type, full_name, is_active FROM users WHERE id = $1',
-      [decoded.userId]
-    );
+    // Verificar se o usuário ainda existe e está ativo nos dados mock
+    const user = mockDatabase.users.find(u => u.id === decoded.userId && u.isActive);
 
-    if (userResult.rows.length === 0) {
+    if (!user) {
       return res.status(401).json({
-        error: 'Usuário não encontrado',
-        code: 'USER_NOT_FOUND'
+        error: 'Usuário não encontrado ou inativo',
+        code: 'INVALID_USER'
       });
     }
 
-    const user = userResult.rows[0];
-
-    if (!user.is_active) {
-      return res.status(401).json({
-        error: 'Usuário inativo',
-        code: 'USER_INACTIVE'
-      });
-    }
-
+    // Adicionar informações do usuário ao request
     req.user = {
       id: user.id,
       email: user.email,
-      userType: user.user_type,
-      fullName: user.full_name
+      userType: user.userType,
+      fullName: user.fullName
     };
+
+    // Adicionar userId diretamente para compatibilidade
+    (req as any).userId = user.id;
 
     next();
   } catch (error) {
@@ -131,3 +123,6 @@ export const requireUserTypes = (allowedTypes: string[]) => {
     next();
   };
 };
+
+// Alias para compatibilidade
+export const authenticate = authenticateToken;

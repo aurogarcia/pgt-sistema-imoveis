@@ -88,7 +88,22 @@ class Database {
 
 const db = new Database();
 
-// Testar conexão na inicialização
-db.testConnection();
+// Testar conexão na inicialização (desabilitado para mock)
+// db.testConnection();
 
-export default db;
+// Versão mock para desenvolvimento sem PostgreSQL
+const mockDb = {
+  query: async (text: string, params?: any[]): Promise<any> => {
+    console.log('Mock DB Query:', text);
+    return { rows: [], rowCount: 0 };
+  },
+  testConnection: async (): Promise<boolean> => {
+    console.log('Mock DB: Conexão simulada OK');
+    return true;
+  },
+  end: async (): Promise<void> => {
+    console.log('Mock DB: Conexão finalizada');
+  }
+};
+
+export default mockDb;

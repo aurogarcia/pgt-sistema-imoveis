@@ -4,7 +4,7 @@ import { Request, Response, NextFunction } from 'express';
 // Schemas de validação
 
 // Schema para registro de usuário
-export const userRegistrationSchema = Joi.object({
+export const registerSchema = Joi.object({
   email: Joi.string().email().required().messages({
     'string.email': 'Email deve ter um formato válido',
     'any.required': 'Email é obrigatório'
@@ -30,6 +30,9 @@ export const userRegistrationSchema = Joi.object({
     'any.only': 'Consentimento para processamento de dados é obrigatório'
   })
 });
+
+// Schema para registro de usuário (alias para compatibilidade)
+export const userRegistrationSchema = registerSchema;
 
 // Schema para login
 export const loginSchema = Joi.object({

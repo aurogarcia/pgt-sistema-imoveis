@@ -1,23 +1,23 @@
 -- Schema Simplificado SEM PostGIS (para começar)
 -- Sistema de Gestão de Imóveis Rurais e Urbanos
 
--- Extensões básicas
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- Extensões básicas (PostgreSQL)
+-- CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
--- Enum para tipos de usuário
-CREATE TYPE user_type AS ENUM ('admin', 'user', 'agent', 'viewer');
+-- Enum para tipos de usuário (PostgreSQL)
+-- CREATE TYPE user_type AS ENUM ('admin', 'user', 'agent', 'viewer');
 
--- Enum para status de regularização
-CREATE TYPE regularization_status AS ENUM ('regular', 'irregular', 'pending', 'in_process', 'blocked');
+-- Enum para status de regularização (PostgreSQL)
+-- CREATE TYPE regularization_status AS ENUM ('regular', 'irregular', 'pending', 'in_process', 'blocked');
 
--- Enum para tipos de imóvel rural
-CREATE TYPE rural_property_type AS ENUM ('farm', 'ranch', 'settlement', 'indigenous_land', 'environmental_reserve');
+-- Enum para tipos de imóvel rural (PostgreSQL)
+-- CREATE TYPE rural_property_type AS ENUM ('farm', 'ranch', 'settlement', 'indigenous_land', 'environmental_reserve');
 
--- Enum para tipos de imóvel urbano
-CREATE TYPE urban_property_type AS ENUM ('residential', 'commercial', 'industrial', 'mixed', 'vacant_lot');
+-- Enum para tipos de imóvel urbano (PostgreSQL)
+-- CREATE TYPE urban_property_type AS ENUM ('residential', 'commercial', 'industrial', 'mixed', 'vacant_lot');
 
--- Enum para estados brasileiros
-CREATE TYPE state_code AS ENUM ('RJ', 'ES', 'SP', 'MG', 'BA', 'RS', 'PR', 'SC', 'GO', 'MT', 'MS', 'TO', 'AC', 'RO', 'AM', 'RR', 'PA', 'AP', 'MA', 'PI', 'CE', 'RN', 'PB', 'PE', 'AL', 'SE', 'DF');
+-- Enum para estados brasileiros (PostgreSQL)
+-- CREATE TYPE state_code AS ENUM ('RJ', 'ES', 'SP', 'MG', 'BA', 'RS', 'PR', 'SC', 'GO', 'MT', 'MS', 'TO', 'AC', 'RO', 'AM', 'RR', 'PA', 'AP', 'MA', 'PI', 'CE', 'RN', 'PB', 'PE', 'AL', 'SE', 'DF');
 
 -- Tabela de Usuários
 CREATE TABLE users (
