@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imóveis Urbanos - Sistema PGT</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+            padding: 2rem;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 3rem; }
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .property-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        .nav-links {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .nav-links a:hover { background: rgba(255, 255, 255, 0.2); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏢 Gestão de Imóveis Urbanos</h1>
+            <p>Controle de propriedades urbanas e REURB</p>
+        </div>
+        
+        <div class="property-grid">
+            <div class="property-card">
+                <h3>🏠 Residencial Centro</h3>
+                <p><strong>Endereço:</strong> Rua das Flores, 123</p>
+                <p><strong>Área:</strong> 200m²</p>
+                <p><strong>Status:</strong> ✅ Regular</p>
+                <p><strong>IPTU:</strong> R$ 850,00/ano</p>
+            </div>
+
+            <div class="property-card">
+                <h3>🏪 Comercial Zona Sul</h3>
+                <p><strong>Endereço:</strong> Av. Principal, 456</p>
+                <p><strong>Área:</strong> 150m²</p>
+                <p><strong>Status:</strong> ⚠️ REURB Pendente</p>
+                <p><strong>IPTU:</strong> R$ 1.200,00/ano</p>
+            </div>
+
+            <div class="property-card">
+                <h3>🏘️ Condomínio Norte</h3>
+                <p><strong>Endereço:</strong> Rua do Bosque, 789</p>
+                <p><strong>Área:</strong> 300m²</p>
+                <p><strong>Status:</strong> ✅ Regular</p>
+                <p><strong>IPTU:</strong> R$ 1.450,00/ano</p>
+            </div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="index.html">🏠 Início</a>
+            <a href="dashboard.html">📊 Dashboard</a>
+            <a href="rural.html">🏚️ Imóveis Rurais</a>
+            <a href="login.html">🔐 Login</a>
+        </div>
+    </div>
+</body>
+</html>
