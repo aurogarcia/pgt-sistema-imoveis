@@ -293,7 +293,7 @@ export function RuralPropertiesPage() {
                   <TableCell>
                     <Chip 
                       label={property.propertyType === 'farm' ? 'Fazenda' : 
-                            property.propertyType === 'ranch' ? 'Rancho' : 
+                            property.propertyType === 'sitio' ? 'Sítio' : 
                             property.propertyType}
                       variant="outlined" 
                       size="small" 
@@ -366,7 +366,7 @@ export function RuralPropertiesPage() {
                   onChange={(e) => setFormData({ ...formData, propertyType: e.target.value })}
                 >
                   <MenuItem value="farm">Fazenda</MenuItem>
-                  <MenuItem value="ranch">Rancho</MenuItem>
+                  <MenuItem value="sitio">Sítio</MenuItem>
                   <MenuItem value="settlement">Assentamento</MenuItem>
                 </Select>
               </FormControl>

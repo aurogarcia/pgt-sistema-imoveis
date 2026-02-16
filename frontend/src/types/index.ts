@@ -53,7 +53,7 @@ export interface AuthResponse {
 // Tipos de propriedades
 export type PropertyType = 'rural' | 'urban';
 export type RegularizationStatus = 'regular' | 'irregular' | 'pending' | 'in_process' | 'blocked';
-export type RuralPropertyType = 'farm' | 'ranch' | 'settlement' | 'indigenous_land' | 'environmental_reserve';
+export type RuralPropertyType = 'farm' | 'sitio' | 'settlement' | 'indigenous_land' | 'environmental_reserve';
 export type UrbanPropertyType = 'residential' | 'commercial' | 'industrial' | 'mixed' | 'vacant_lot';
 export type StateCode = 'RJ' | 'ES' | 'SP' | 'MG' | 'BA' | 'RS' | 'PR' | 'SC' | 'GO' | 'MT' | 'MS' | 'TO' | 'AC' | 'RO' | 'AM' | 'RR' | 'PA' | 'AP' | 'MA' | 'PI' | 'CE' | 'RN' | 'PB' | 'PE' | 'AL' | 'SE' | 'DF';
 

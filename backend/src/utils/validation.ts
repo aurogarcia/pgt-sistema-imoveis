@@ -48,7 +48,7 @@ export const loginSchema = Joi.object({
 // Schema para propriedade rural
 export const ruralPropertySchema = Joi.object({
   propertyName: Joi.string().min(2).max(255).required(),
-  propertyType: Joi.string().valid('farm', 'ranch', 'settlement', 'indigenous_land', 'environmental_reserve').required(),
+  propertyType: Joi.string().valid('farm', 'sitio', 'settlement', 'indigenous_land', 'environmental_reserve').required(),
   totalAreaHectares: Joi.number().positive().required(),
   productiveAreaHectares: Joi.number().positive().max(Joi.ref('totalAreaHectares')).optional(),
   state: Joi.string().length(2).required(),

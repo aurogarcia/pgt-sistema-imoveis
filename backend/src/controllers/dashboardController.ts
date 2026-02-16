@@ -187,7 +187,7 @@ export const dashboardController = {
         propertyTypeDistribution: {
           rural: {
             farm: userRuralProperties.filter(p => p.propertyType === 'farm').length,
-            ranch: userRuralProperties.filter(p => p.propertyType === 'ranch').length,
+            sitio: userRuralProperties.filter(p => p.propertyType === 'sitio').length,
             settlement: userRuralProperties.filter(p => p.propertyType === 'settlement').length
           },
           urban: {

@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 // Tipos importados (simplificados para mock)
 export type UserType = 'admin' | 'user' | 'agent' | 'viewer';
 export type RegularizationStatus = 'regular' | 'irregular' | 'pending' | 'in_process' | 'blocked';
-export type RuralPropertyType = 'farm' | 'ranch' | 'settlement' | 'indigenous_land' | 'environmental_reserve';
+export type RuralPropertyType = 'farm' | 'sitio' | 'settlement' | 'indigenous_land' | 'environmental_reserve';
 export type UrbanPropertyType = 'residential' | 'commercial' | 'industrial' | 'mixed' | 'vacant_lot';
 export type StateCode = 'RJ' | 'ES' | 'SP' | 'MG' | 'BA' | 'RS' | 'PR' | 'SC';
 

@@ -11,7 +11,7 @@ CREATE TYPE user_type AS ENUM ('admin', 'user', 'agent', 'viewer');
 CREATE TYPE regularization_status AS ENUM ('regular', 'irregular', 'pending', 'in_process', 'blocked');
 
 -- Enum para tipos de imóvel rural (PostgreSQL)
-CREATE TYPE rural_property_type AS ENUM ('farm', 'ranch', 'settlement', 'indigenous_land', 'environmental_reserve');
+CREATE TYPE rural_property_type AS ENUM ('farm', 'sitio', 'settlement', 'indigenous_land', 'environmental_reserve');
 
 -- Enum para tipos de imóvel urbano (PostgreSQL)
 CREATE TYPE urban_property_type AS ENUM ('residential', 'commercial', 'industrial', 'mixed', 'vacant_lot');
