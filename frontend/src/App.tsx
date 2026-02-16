@@ -8,6 +8,7 @@ import { Layout } from './components/layout/Layout';
 import { LoadingSpinner } from './components/common/LoadingSpinner';
 
 // Pages
+import { HomePage } from './pages/home/HomePage';
 import { LoginPage } from './pages/auth/LoginPage';
 import { RegisterPage } from './pages/auth/RegisterPage';
 import { DashboardPage } from './pages/dashboard/DashboardPage';
@@ -45,6 +46,12 @@ function App() {
         transition={{ duration: 0.3 }}
       >
         <Routes>
+          {/* Página inicial */}
+          <Route 
+            path="/" 
+            element={!user ? <HomePage /> : <Navigate to="/dashboard" replace />} 
+          />
+          
           {/* Rotas públicas */}
           <Route 
             path="/login" 
@@ -58,7 +65,6 @@ function App() {
           {/* Rotas protegidas */}
           <Route element={<ProtectedRoute />}>
             <Route element={<Layout />}>
-              <Route path="/" element={<Navigate to="/dashboard" replace />} />
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/rural-properties" element={<RuralPropertiesPage />} />
               <Route path="/urban-properties" element={<UrbanPropertiesPage />} />

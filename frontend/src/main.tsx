@@ -8,7 +8,7 @@ import { SnackbarProvider } from 'notistack';
 import { Toaster } from 'react-hot-toast';
 
 import App from './App.tsx';
-import { theme } from './theme/theme.ts';
+import theme from './theme/theme.ts';
 import { AuthProvider } from './contexts/AuthContext.tsx';
 
 // Configurar React Query

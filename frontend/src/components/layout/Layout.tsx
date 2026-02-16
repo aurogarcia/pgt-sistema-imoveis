@@ -25,7 +25,8 @@ import {
   Receipt as ReceiptIcon,
   SmartToy as AIIcon,
   AccountCircle as AccountIcon,
-  Logout as LogoutIcon
+  Logout as LogoutIcon,
+  Business as BusinessIcon
 } from '@mui/icons-material';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
@@ -68,12 +69,31 @@ export function Layout() {
 
   const drawer = (
     <Box>
-      <Toolbar>
-        <Typography variant="h6" noWrap component="div" color="primary" fontWeight="bold">
+      <Toolbar sx={{ 
+        background: 'linear-gradient(135deg, #667eea, #764ba2)', 
+        flexDirection: 'column', 
+        alignItems: 'center',
+        py: 2
+      }}>
+        <BusinessIcon sx={{ fontSize: '2rem', mb: 1, color: 'white' }} />
+        <Typography 
+          variant="h5" 
+          component="div" 
+          color="white" 
+          fontWeight="bold"
+          textAlign="center"
+        >
+          MedidaGeo
+        </Typography>
+        <Typography 
+          variant="caption" 
+          color="rgba(255,255,255,0.8)"
+          textAlign="center"
+        >
           Sistema PGT
         </Typography>
       </Toolbar>
-      <Divider />
+      <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.2)' }} />
       <List>
         {menuItems.map((item) => {
           const Icon = item.icon;
@@ -99,7 +119,13 @@ export function Layout() {
   );
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box 
+      sx={{ 
+        display: 'flex', 
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      }}
+    >
       <AppBar
         position="fixed"
         sx={{
@@ -118,7 +144,7 @@ export function Layout() {
           </IconButton>
           
           <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
-            Gestão de Imóveis
+            📍 MedidaGeo - Gestão de Imóveis
           </Typography>
           
           <IconButton

@@ -2,9 +2,14 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
-export default defineConfig({
-  base: '',
-  plugins: [react()],
+export default defineConfig(({ command }) => {
+  // Para GitHub Pages, o base deve ser o nome do repositório
+  const isProduction = command === 'build';
+  const baseUrl = isProduction ? '/PGT/' : '/';
+  
+  return {
+    base: baseUrl,
+    plugins: [react()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -32,4 +37,5 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: true,
   },
+  };
 });

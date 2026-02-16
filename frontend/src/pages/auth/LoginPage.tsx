@@ -19,7 +19,8 @@ import {
   Visibility,
   VisibilityOff,
   Login as LoginIcon,
-  PersonAdd as PersonAddIcon
+  PersonAdd as PersonAddIcon,
+  Business as BusinessIcon
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
@@ -77,159 +78,159 @@ export function LoginPage() {
   };
 
   return (
-    <Container maxWidth="sm">
-      <Box
-        sx={{
-          marginTop: 4,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
-        {/* Logo/Título com Imagem */}
-        <Box sx={{ 
-          textAlign: 'center', 
-          mb: 4, 
-          p: 3,
-          background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
-          borderRadius: 3,
-          border: '1px solid #e2e8f0'
-        }}>
-          <Box sx={{ mb: 2, display: 'flex', justifyContent: 'center' }}>
-            <img 
-              src="/images/security-login.svg" 
-              alt="Secure Login Technology"
-              style={{ 
-                width: '200px', 
-                height: 'auto', 
-                maxHeight: '120px',
-                filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.1))'
-              }}
-            />
-          </Box>
-          <Typography component="h1" variant="h4" sx={{ fontWeight: 'bold', color: 'primary.main' }}>
-            Sistema PGT
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary">
-            Gestão Inteligente de Propriedades
-          </Typography>
-        </Box>
-
-        {/* Card de Login */}
-        <Card sx={{ width: '100%', maxWidth: 400 }}>
-          <CardContent sx={{ p: 4 }}>
-            <Typography component="h2" variant="h5" align="center" sx={{ mb: 3 }}>
-              Entrar na sua conta
+    <Box 
+      sx={{
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        display: 'flex',
+        alignItems: 'center',
+        color: 'white',
+        py: 4
+      }}
+    >
+      <Container maxWidth="sm">
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          {/* Logo/Título */}
+          <Box sx={{ 
+            textAlign: 'center', 
+            mb: 4, 
+            p: 3,
+            background: 'rgba(255, 255, 255, 0.1)',
+            backdropFilter: 'blur(10px)',
+            borderRadius: 3,
+            border: '1px solid rgba(255, 255, 255, 0.2)'
+          }}>
+            <BusinessIcon sx={{ fontSize: '3rem', mb: 2, color: 'white' }} />
+            <Typography component="h1" variant="h4" sx={{ fontWeight: 'bold', color: 'white' }}>
+              MedidaGeo
             </Typography>
+            <Typography variant="subtitle1" color="rgba(255,255,255,0.8)">
+              Acesso ao Sistema PGT
+            </Typography>
+          </Box>
 
-            {/* Demo Alert */}
-            <Alert severity="info" sx={{ mb: 3 }}>
-              <strong>Demo:</strong> Use admin@pgt-system.com / admin123 ou clique em "Login Demo"
-            </Alert>
+          {/* Card de Login */}
+          <Card sx={{ width: '100%', maxWidth: 400 }}>
+            <CardContent sx={{ p: 4 }}>
+              <Typography component="h2" variant="h5" align="center" sx={{ mb: 3 }}>
+                Entrar na sua conta
+              </Typography>
 
-            {error && (
-              <Alert severity="error" sx={{ mb: 2 }}>
-                {error}
+              {/* Demo Alert */}
+              <Alert severity="info" sx={{ mb: 3 }}>
+                <strong>Demo:</strong> Use admin@pgt-system.com / admin123 ou clique em "Login Demo"
               </Alert>
-            )}
 
-            <form onSubmit={handleSubmit}>
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                label="Email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <EmailIcon color="action" />
-                    </InputAdornment>
-                  ),
-                }}
-                sx={{ mb: 2 }}
-              />
+              {error && (
+                <Alert severity="error" sx={{ mb: 2 }}>
+                  {error}
+                </Alert>
+              )}
 
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                label="Senha"
-                type={showPassword ? 'text' : 'password'}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <LockIcon color="action" />
-                    </InputAdornment>
-                  ),
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        onClick={() => setShowPassword(!showPassword)}
-                        edge="end"
-                      >
-                        {showPassword ? <VisibilityOff /> : <Visibility />}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
-                sx={{ mb: 3 }}
-              />
+              <form onSubmit={handleSubmit}>
+                <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  label="Email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <EmailIcon color="action" />
+                      </InputAdornment>
+                    ),
+                  }}
+                  sx={{ mb: 2 }}
+                />
 
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                disabled={loading}
-                startIcon={<LoginIcon />}
-                sx={{ mb: 2, py: 1.2 }}
-              >
-                {loading ? 'Entrando...' : 'Entrar'}
-              </Button>
+                <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  label="Senha"
+                  type={showPassword ? 'text' : 'password'}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <LockIcon color="action" />
+                      </InputAdornment>
+                    ),
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={() => setShowPassword(!showPassword)}
+                          edge="end"
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                  sx={{ mb: 3 }}
+                />
 
-              <Button
-                type="button"
-                fullWidth
-                variant="outlined"
-                onClick={handleDemoLogin}
-                startIcon={<PersonAddIcon />}
-                sx={{ mb: 2 }}
-              >
-                Login Demo
-              </Button>
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  disabled={loading}
+                  startIcon={<LoginIcon />}
+                  sx={{ mb: 2, py: 1.2 }}
+                >
+                  {loading ? 'Entrando...' : 'Entrar'}
+                </Button>
 
-              <Divider sx={{ my: 2 }}>
-                <Typography variant="body2" color="text.secondary">
-                  ou
-                </Typography>
-              </Divider>
+                <Button
+                  type="button"
+                  fullWidth
+                  variant="outlined"
+                  onClick={handleDemoLogin}
+                  startIcon={<PersonAddIcon />}
+                  sx={{ mb: 2 }}
+                >
+                  Login Demo
+                </Button>
 
-              <Box sx={{ textAlign: 'center' }}>
-                <Link href="#" variant="body2" sx={{ mr: 2 }}>
-                  Esqueceu a senha?
-                </Link>
-                <Link href="/register" variant="body2">
-                  Criar conta
-                </Link>
-              </Box>
-            </form>
-          </CardContent>
-        </Card>
+                <Divider sx={{ my: 2 }}>
+                  <Typography variant="body2" color="text.secondary">
+                    ou
+                  </Typography>
+                </Divider>
 
-        {/* Informações do Sistema */}
-        <Box sx={{ mt: 4, textAlign: 'center' }}>
-          <Typography variant="body2" color="text.secondary">
-            Sistema de gestão para regularização de imóveis rurais e urbanos
-          </Typography>
-          <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
-            Integrado com IA para diagnósticos automatizados • LGPD Compliant
-          </Typography>
+                <Box sx={{ textAlign: 'center' }}>
+                  <Link href="#" variant="body2" sx={{ mr: 2 }}>
+                    Esqueceu a senha?
+                  </Link>
+                  <Link href="/register" variant="body2">
+                    Criar conta
+                  </Link>
+                </Box>
+              </form>
+            </CardContent>
+          </Card>
+
+          {/* Informações do Sistema */}
+          <Box sx={{ mt: 4, textAlign: 'center' }}>
+            <Typography variant="body2" color="rgba(255,255,255,0.8)">
+              MedidaGeo - Engenharia e Georreferenciamento
+            </Typography>
+            <Typography variant="caption" color="rgba(255,255,255,0.6)" sx={{ mt: 1, display: 'block' }}>
+              Sistema PGT para gestão de propriedades rurais e urbanas • Tecnologia IA
+            </Typography>
+          </Box>
         </Box>
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 }
