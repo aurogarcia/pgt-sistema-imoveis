@@ -37,7 +37,6 @@
   "bugs": {
     "url": "https://github.com/SEU_USUARIO/pgt-sistema-imoveis/issues"
   },
-  "homepage": "https://github.com/SEU_USUARIO/pgt-sistema-imoveis#readme",
   "devDependencies": {
     "concurrently": "^8.2.2"
   },
