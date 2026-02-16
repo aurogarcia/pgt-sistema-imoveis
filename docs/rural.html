@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imóveis Rurais - Sistema PGT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .property-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+        }
+        
+        .property-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .property-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .info-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+        
+        .info-label {
+            font-size: 0.9rem;
+            color: #e0e0e0;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-value {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .status {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .status.regular {
+            background: rgba(76, 175, 80, 0.3);
+            color: #4caf50;
+        }
+        
+        .status.pendente {
+            background: rgba(255, 193, 7, 0.3);
+            color: #ffc107;
+        }
+        
+        .btn {
+            background: rgba(76, 175, 80, 0.8);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-right: 0.5rem;
+        }
+        
+        .btn:hover {
+            background: rgba(76, 175, 80, 1);
+        }
+        
+        .nav-links {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏚️ Gestão de Imóveis Rurais</h1>
+            <p>Controle e regularização de propriedades rurais</p>
+        </div>
+        
+        <div class="property-card">
+            <div class="property-header">
+                <h3>Fazenda Santa Maria</h3>
+                <span class="status regular">✅ Regular</span>
+            </div>
+            
+            <div class="property-info">
+                <div class="info-item">
+                    <div class="info-label">Área Total</div>
+                    <div class="info-value">250 hectares</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">CAR</div>
+                    <div class="info-value">RJ-1234567890</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">CAFIR</div>
+                    <div class="info-value">987.654.321</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Município</div>
+                    <div class="info-value">Campos dos Goytacazes - RJ</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Licença Ambiental</div>
+                    <div class="info-value">✅ Ativa</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">ITR 2024</div>
+                    <div class="info-value">R$ 1.250,00</div>
+                </div>
+            </div>
+            
+            <div>
+                <button class="btn" onclick="alert('Editando propriedade...')">✏️ Editar</button>
+                <button class="btn" onclick="alert('Gerando relatório...')">📄 Relatório</button>
+                <button class="btn" onclick="alert('Executando diagnóstico IA...')">🤖 Diagnóstico IA</button>
+            </div>
+        </div>
+        
+        <div class="property-card">
+            <div class="property-header">
+                <h3>Sítio Boa Vista</h3>
+                <span class="status pendente">⚠️ Documentação Pendente</span>
+            </div>
+            
+            <div class="property-info">
+                <div class="info-item">
+                    <div class="info-label">Área Total</div>
+                    <div class="info-value">45 hectares</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">CAR</div>
+                    <div class="info-value">Em processo</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">CAFIR</div>
+                    <div class="info-value">Pendente</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Município</div>
+                    <div class="info-value">Nova Friburgo - RJ</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Licença Ambiental</div>
+                    <div class="info-value">⚠️ Pendente</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">ITR 2024</div>
+                    <div class="info-value">R$ 380,00</div>
+                </div>
+            </div>
+            
+            <div>
+                <button class="btn" onclick="alert('Editando propriedade...')">✏️ Editar</button>
+                <button class="btn" onclick="alert('Gerando relatório...')">📄 Relatório</button>
+                <button class="btn" onclick="alert('Executando diagnóstico IA...')">🤖 Diagnóstico IA</button>
+            </div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="index.html">🏠 Início</a>
+            <a href="dashboard.html">📊 Dashboard</a>
+            <a href="urbanos.html">🏢 Imóveis Urbanos</a>
+            <a href="login.html">🔐 Login</a>
+        </div>
+    </div>
+</body>
+</html>

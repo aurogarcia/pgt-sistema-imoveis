@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistema PGT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-card .label {
+            color: #f0f0f0;
+            font-size: 1.1rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .feature-card p {
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            background: rgba(76, 175, 80, 0.8);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: rgba(76, 175, 80, 1);
+        }
+        
+        .nav-links {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 Dashboard PGT</h1>
+        <p>Sistema de Gestão de Imóveis Rurais e Urbanos</p>
+    </div>
+    
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="icon">🏚️</div>
+            <div class="number">127</div>
+            <div class="label">Imóveis Rurais</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="icon">🏢</div>
+            <div class="number">89</div>
+            <div class="label">Imóveis Urbanos</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="icon">📄</div>
+            <div class="number">45</div>
+            <div class="label">Relatórios IRTR</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="icon">🤖</div>
+            <div class="number">23</div>
+            <div class="label">Diagnósticos IA</div>
+        </div>
+    </div>
+    
+    <div class="features-grid">
+        <div class="feature-card">
+            <h3>🏚️ Gestão Rural</h3>
+            <p>Controle completo de propriedades rurais, incluindo CAR, CAFIR e certificações ambientais.</p>
+            <button class="btn" onclick="alert('Funcionalidade em desenvolvimento!')">Gerenciar</button>
+        </div>
+        
+        <div class="feature-card">
+            <h3>🏢 Gestão Urbana</h3>
+            <p>Administração de imóveis urbanos, REURB, regularização fundiária e documentação.</p>
+            <button class="btn" onclick="alert('Funcionalidade em desenvolvimento!')">Gerenciar</button>
+        </div>
+        
+        <div class="feature-card">
+            <h3>📊 Relatórios IRTR</h3>
+            <p>Geração automática de relatórios de Imposto Territorial Rural com dados atualizados.</p>
+            <button class="btn" onclick="alert('Funcionalidade em desenvolvimento!')">Gerar</button>
+        </div>
+        
+        <div class="feature-card">
+            <h3>🤖 IA Diagnósticos</h3>
+            <p>Análise inteligente de propriedades com sugestões de regularização e melhorias.</p>
+            <button class="btn" onclick="alert('Funcionalidade em desenvolvimento!')">Analisar</button>
+        </div>
+    </div>
+    
+    <div class="nav-links">
+        <a href="index.html">🏠 Início</a>
+        <a href="login.html">🔐 Login</a>
+        <a href="rural.html">🏚️ Imóveis Rurais</a>
+        <a href="urbanos.html">🏢 Imóveis Urbanos</a>
+        <a href="relatorios.html">📊 Relatórios</a>
+    </div>
+</body>
+</html>
