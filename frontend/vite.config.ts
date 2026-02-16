@@ -5,7 +5,7 @@ import path from 'path';
 export default defineConfig(({ command }) => {
   // Para GitHub Pages, o base deve ser o nome do repositório
   const isProduction = command === 'build';
-  const baseUrl = isProduction ? '/PGT/' : '/';
+  const baseUrl = isProduction ? '/pgt-sistema-imoveis/' : '/';
   
   return {
     base: baseUrl,
