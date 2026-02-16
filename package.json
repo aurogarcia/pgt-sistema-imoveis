@@ -12,8 +12,9 @@
     "start:backend": "cd backend && npm start",
     "start:frontend": "cd frontend && npm run preview",
     "deploy:build": "cd frontend && npm run build",
-    "deploy:push": "git add . && git commit -m \"🚀 Deploy: Atualização\" && git push origin main",
-    "deploy": "npm run deploy:build && npm run deploy:push",
+    "deploy:docs": "Remove-Item -Recurse -Force docs -ErrorAction SilentlyContinue && Copy-Item -Recurse frontend/dist docs",
+    "deploy:commit": "git add docs && git commit -m \"🚀 Deploy docs\" && git push origin main",
+    "deploy": "npm run deploy:build && npm run deploy:docs && npm run deploy:commit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
