@@ -1,0 +1,47 @@
+{
+  "name": "pgt-sistema-imoveis",
+  "version": "1.0.0",
+  "description": "Sistema completo para gestão de imóveis rurais e urbanos com IA",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "build:all": "npm run build:backend && npm run build:frontend",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm run preview",
+    "deploy:prepare": "npm run build:all && npm run deploy:docs",
+    "deploy:docs": "rm -rf docs && mkdir docs && cp -r frontend/dist/* docs/ && echo 'Build copiado para docs/'",
+    "deploy:commit": "git add . && git commit -m '🚀 Deploy: Build de produção' && git push origin main",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SEU_USUARIO/pgt-sistema-imoveis.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react",
+    "typescript",
+    "postgresql",
+    "real-estate",
+    "property-management",
+    "brazil",
+    "rural-urban-properties",
+    "ai-integration"
+  ],
+  "author": "Seu Nome",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SEU_USUARIO/pgt-sistema-imoveis/issues"
+  },
+  "homepage": "https://github.com/SEU_USUARIO/pgt-sistema-imoveis#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}

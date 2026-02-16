@@ -46,8 +46,11 @@ export function LoginPage() {
           id: '1',
           email: 'admin@pgt-system.com',
           fullName: 'Administrador do Sistema',
+          cpfCnpj: '12345678901',
           userType: 'admin' as const,
-          emailVerified: true
+          emailVerified: true,
+          isActive: true,
+          createdAt: new Date().toISOString()
         };
         
         const mockTokens = {

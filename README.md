@@ -1,8 +1,31 @@
-# Sistema de Gestão de Imóveis Rurais e Urbanos (PGT)
+# 🏡 PGT - Sistema de Gestão de Imóveis Rurais e Urbanos
 
-## Visão Geral
+![Status](https://img.shields.io/badge/status-funcional-green)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue)
+![Node.js](https://img.shields.io/badge/Node.js-18+-green)
+![React](https://img.shields.io/badge/React-18+-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5+-blue)
 
-Sistema completo para gestão e regularização de imóveis rurais e urbanos, com integração de IA para diagnósticos automatizados e suporte especializado.
+Sistema completo para gestão e regularização de imóveis rurais e urbanos, com integração de IA para diagnósticos automatizados.
+
+## ✨ Funcionalidades
+
+### 🏗️ Backend
+- 🔐 **Autenticação JWT**: Sistema seguro com bcryptjs
+- 🗄️ **PostgreSQL 16**: Banco de dados robusto e escalável
+- 🏠 **Gestão de Imóveis**: CRUD completo para propriedades rurais e urbanas
+- 🤖 **IA Integrada**: Diagnósticos automatizados e chat inteligente
+- 📊 **Dashboard**: Métricas comparativas (RJ vs ES)
+- 📄 **Relatórios IRTR**: Geração automática de relatórios
+- 📁 **Upload de Documentos**: Gerenciamento de arquivos
+- 🔍 **Sistema de Auditoria**: Logs detalhados e conformidade LGPD
+
+### 🎨 Frontend
+- ⚛️ **React + TypeScript**: Interface moderna e tipada
+- 🎨 **Material-UI**: Design system profissional
+- 📱 **Responsivo**: Funciona em desktop, tablet e mobile
+- 🔄 **Estado Global**: Context API para gerenciamento
+- 🚀 **Vite**: Build rápido e hot reload
 
 ## Tecnologias Utilizadas
 
