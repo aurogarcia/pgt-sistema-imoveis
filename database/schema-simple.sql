@@ -2,22 +2,22 @@
 -- Sistema de Gestão de Imóveis Rurais e Urbanos
 
 -- Extensões básicas (PostgreSQL)
--- CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 -- Enum para tipos de usuário (PostgreSQL)
--- CREATE TYPE user_type AS ENUM ('admin', 'user', 'agent', 'viewer');
+CREATE TYPE user_type AS ENUM ('admin', 'user', 'agent', 'viewer');
 
 -- Enum para status de regularização (PostgreSQL)
--- CREATE TYPE regularization_status AS ENUM ('regular', 'irregular', 'pending', 'in_process', 'blocked');
+CREATE TYPE regularization_status AS ENUM ('regular', 'irregular', 'pending', 'in_process', 'blocked');
 
 -- Enum para tipos de imóvel rural (PostgreSQL)
--- CREATE TYPE rural_property_type AS ENUM ('farm', 'ranch', 'settlement', 'indigenous_land', 'environmental_reserve');
+CREATE TYPE rural_property_type AS ENUM ('farm', 'ranch', 'settlement', 'indigenous_land', 'environmental_reserve');
 
 -- Enum para tipos de imóvel urbano (PostgreSQL)
--- CREATE TYPE urban_property_type AS ENUM ('residential', 'commercial', 'industrial', 'mixed', 'vacant_lot');
+CREATE TYPE urban_property_type AS ENUM ('residential', 'commercial', 'industrial', 'mixed', 'vacant_lot');
 
 -- Enum para estados brasileiros (PostgreSQL)
--- CREATE TYPE state_code AS ENUM ('RJ', 'ES', 'SP', 'MG', 'BA', 'RS', 'PR', 'SC', 'GO', 'MT', 'MS', 'TO', 'AC', 'RO', 'AM', 'RR', 'PA', 'AP', 'MA', 'PI', 'CE', 'RN', 'PB', 'PE', 'AL', 'SE', 'DF');
+CREATE TYPE state_code AS ENUM ('RJ', 'ES', 'SP', 'MG', 'BA', 'RS', 'PR', 'SC', 'GO', 'MT', 'MS', 'TO', 'AC', 'RO', 'AM', 'RR', 'PA', 'AP', 'MA', 'PI', 'CE', 'RN', 'PB', 'PE', 'AL', 'SE', 'DF');
 
 -- Tabela de Usuários
 CREATE TABLE users (
