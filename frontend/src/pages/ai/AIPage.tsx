@@ -118,12 +118,47 @@ export function AIPage() {
 
   return (
     <Container maxWidth="md" sx={{ height: '80vh', display: 'flex', flexDirection: 'column' }}>
-      <Typography variant="h4" gutterBottom>
-        Assistente IA - Especialista Fundiário 🤖
-      </Typography>
+      {/* Banner AI/Diagnósticos */}
+      <Paper elevation={0} sx={{ 
+        mb: 3, 
+        p: 3, 
+        background: 'linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%)',
+        borderRadius: 3,
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <Box display="flex" alignItems="center" gap={3}>
+          <Box flex={1}>
+            <Box display="flex" alignItems="center" gap={2} sx={{ mb: 2 }}>
+              <SmartToy sx={{ fontSize: 40, color: '#9333ea' }} />
+              <Typography variant="h4" sx={{ fontWeight: 700, color: '#7c3aed' }}>
+                Assistente IA - Especialista Fundiário 🤖
+              </Typography>
+            </Box>
+            <Typography variant="h6" color="text.secondary" sx={{ mb: 1 }}>
+              Inteligência Artificial para Diagnósticos Precisos
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Chat especializado em regularização, REURB, CAR e questões fundiárias
+            </Typography>
+          </Box>
+          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+            <img 
+              src="/images/ai-diagnostics.svg" 
+              alt="AI-Powered Property Diagnostics"
+              style={{ 
+                width: '240px', 
+                height: 'auto', 
+                maxHeight: '150px',
+                filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.1))'
+              }}
+            />
+          </Box>
+        </Box>
+      </Paper>
 
       <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-        Chat com inteligência artificial especializada em regularização de imóveis rurais e urbanos
+        Tire suas dúvidas sobre imóveis rurais, urbanos, REURB, CAR e regularização fundiária
       </Typography>
 
       {error && (

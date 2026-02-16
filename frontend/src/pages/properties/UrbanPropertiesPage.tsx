@@ -229,14 +229,59 @@ export function UrbanPropertiesPage() {
 
   return (
     <Container maxWidth="xl">
+      {/* Banner Imóveis Urbanos */}
+      <Paper elevation={0} sx={{ 
+        mb: 4, 
+        p: 3, 
+        background: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
+        borderRadius: 3,
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <Box display="flex" alignItems="center" gap={3}>
+          <Box flex={1}>
+            <Box display="flex" alignItems="center" gap={2} sx={{ mb: 2 }}>
+              <LocationCity sx={{ fontSize: 40, color: '#2563eb' }} />
+              <Typography variant="h4" sx={{ fontWeight: 700, color: '#1d4ed8' }}>
+                Imóveis Urbanos - REURB
+              </Typography>
+            </Box>
+            <Typography variant="h6" color="text.secondary" sx={{ mb: 1 }}>
+              Regularização Urbanística com Smart City Technology
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Controle digital de propriedades urbanas, REURB e infraestrutura IoT
+            </Typography>
+          </Box>
+          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+            <img 
+              src="/images/urban-properties.svg" 
+              alt="Smart Urban Property Management"
+              style={{ 
+                width: '280px', 
+                height: 'auto', 
+                maxHeight: '180px',
+                filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.1))'
+              }}
+            />
+          </Box>
+        </Box>
+      </Paper>
+      
       <Box display="flex" justifyContent="space-between" alignItems="center" sx={{ mb: 4 }}>
-        <Typography variant="h4" gutterBottom>
-          Imóveis Urbanos - REURB
+        <Typography variant="h5" color="text.secondary">
+          Cadastro REURB
         </Typography>
         <Button
           variant="contained"
           startIcon={<Add />}
           onClick={handleCreate}
+          sx={{ 
+            background: 'linear-gradient(45deg, #3b82f6 30%, #2563eb 90%)',
+            '&:hover': {
+              background: 'linear-gradient(45deg, #2563eb 30%, #1d4ed8 90%)',
+            }
+          }}
         >
           Cadastrar Propriedade
         </Button>

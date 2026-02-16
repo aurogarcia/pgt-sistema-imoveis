@@ -9,7 +9,8 @@ import {
   Button,
   CircularProgress,
   Alert,
-  LinearProgress
+  LinearProgress,
+  Paper
 } from '@mui/material';
 import { 
   Agriculture, 
@@ -91,19 +92,46 @@ export function DashboardPage() {
 
   return (
     <Container maxWidth="xl">
-      <Box display="flex" justifyContent="space-between" alignItems="center" sx={{ mb: 4 }}>
-        <Typography variant="h4" gutterBottom>
-          Dashboard - Olá, {user?.fullName}! 👋
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {new Date().toLocaleDateString('pt-BR', { 
-            weekday: 'long', 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-          })}
-        </Typography>
-      </Box>
+      {/* Hero Banner com Imagem Tecnológica */}
+      <Paper elevation={0} sx={{ 
+        mb: 4, 
+        p: 3, 
+        background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
+        borderRadius: 3,
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <Box display="flex" alignItems="center" gap={3}>
+          <Box flex={1}>
+            <Typography variant="h4" gutterBottom sx={{ fontWeight: 700, color: '#0c4a6e' }}>
+              Dashboard - Olá, {user?.fullName}! 👋
+            </Typography>
+            <Typography variant="h6" color="text.secondary" sx={{ mb: 2 }}>
+              Sistema PGT - Gestão Inteligente de Propriedades
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {new Date().toLocaleDateString('pt-BR', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+              })}
+            </Typography>
+          </Box>
+          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+            <img 
+              src="/images/tech-dashboard.svg" 
+              alt="Advanced Property Management Technology"
+              style={{ 
+                width: '350px', 
+                height: 'auto', 
+                maxHeight: '200px',
+                filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.1))'
+              }}
+            />
+          </Box>
+        </Box>
+      </Paper>
       
       {/* Cards de Estatísticas */}
       <Grid container spacing={3} sx={{ mb: 4 }}>

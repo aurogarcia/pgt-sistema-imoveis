@@ -86,13 +86,32 @@ export function LoginPage() {
           alignItems: 'center',
         }}
       >
-        {/* Logo/Título */}
-        <Box sx={{ textAlign: 'center', mb: 4 }}>
+        {/* Logo/Título com Imagem */}
+        <Box sx={{ 
+          textAlign: 'center', 
+          mb: 4, 
+          p: 3,
+          background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
+          borderRadius: 3,
+          border: '1px solid #e2e8f0'
+        }}>
+          <Box sx={{ mb: 2, display: 'flex', justifyContent: 'center' }}>
+            <img 
+              src="/images/security-login.svg" 
+              alt="Secure Login Technology"
+              style={{ 
+                width: '200px', 
+                height: 'auto', 
+                maxHeight: '120px',
+                filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.1))'
+              }}
+            />
+          </Box>
           <Typography component="h1" variant="h4" sx={{ fontWeight: 'bold', color: 'primary.main' }}>
             Sistema PGT
           </Typography>
           <Typography variant="subtitle1" color="text.secondary">
-            Gestão de Imóveis Rurais e Urbanos
+            Gestão Inteligente de Propriedades
           </Typography>
         </Box>
 

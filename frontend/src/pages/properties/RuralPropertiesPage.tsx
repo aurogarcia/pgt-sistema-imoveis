@@ -180,14 +180,59 @@ export function RuralPropertiesPage() {
 
   return (
     <Container maxWidth="xl">
+      {/* Banner Imóveis Rurais */}
+      <Paper elevation={0} sx={{ 
+        mb: 4, 
+        p: 3, 
+        background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
+        borderRadius: 3,
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <Box display="flex" alignItems="center" gap={3}>
+          <Box flex={1}>
+            <Box display="flex" alignItems="center" gap={2} sx={{ mb: 2 }}>
+              <Agriculture sx={{ fontSize: 40, color: '#16a34a' }} />
+              <Typography variant="h4" sx={{ fontWeight: 700, color: '#15803d' }}>
+                Imóveis Rurais
+              </Typography>
+            </Box>
+            <Typography variant="h6" color="text.secondary" sx={{ mb: 1 }}>
+              Gestão Inteligente de Propriedades Rurais com Tecnologia GPS e IA
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Controle completo de áreas, documentação e regularização
+            </Typography>
+          </Box>
+          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+            <img 
+              src="/images/rural-properties.svg" 
+              alt="Smart Rural Property Management"
+              style={{ 
+                width: '280px', 
+                height: 'auto', 
+                maxHeight: '180px',
+                filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.1))'
+              }}
+            />
+          </Box>
+        </Box>
+      </Paper>
+      
       <Box display="flex" justifyContent="space-between" alignItems="center" sx={{ mb: 4 }}>
-        <Typography variant="h4" gutterBottom>
-          Imóveis Rurais
+        <Typography variant="h5" color="text.secondary">
+          Cadastro e Controle
         </Typography>
         <Button
           variant="contained"
           startIcon={<Add />}
           onClick={handleCreate}
+          sx={{ 
+            background: 'linear-gradient(45deg, #22c55e 30%, #16a34a 90%)',
+            '&:hover': {
+              background: 'linear-gradient(45deg, #16a34a 30%, #15803d 90%)',
+            }
+          }}
         >
           Cadastrar Propriedade
         </Button>
