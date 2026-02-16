@@ -1,19 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Sistema de Gestão de Imóveis Rurais e Urbanos com IA" />
-    <meta name="keywords" content="imóveis rurais, imóveis urbanos, regularização, IRTR, CAR, REURB" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema PGT - Gestão de Imóveis</title>
-    
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
-    <script type="module" crossorigin src="./assets/index-BQQQHoMZ.js"></script>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            margin: 2rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #f0f0f0;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+        
+        .feature p {
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+        
+        .status {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(76, 175, 80, 0.3);
+            border-radius: 10px;
+            border: 1px solid rgba(76, 175, 80, 0.5);
+        }
+        
+        .emoji {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji">🏡</div>
+        <h1>Sistema PGT</h1>
+        <p class="subtitle">Sistema de Gestão de Imóveis Rurais e Urbanos</p>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>🏚️ Imóveis Rurais</h3>
+                <p>Gestão completa de propriedades rurais</p>
+            </div>
+            <div class="feature">
+                <h3>🏢 Imóveis Urbanos</h3>
+                <p>Controle de propriedades urbanas</p>
+            </div>
+            <div class="feature">
+                <h3>🤖 IA Integrada</h3>
+                <p>Diagnósticos automatizados</p>
+            </div>
+            <div class="feature">
+                <h3>📊 Relatórios IRTR</h3>
+                <p>Geração automática de relatórios</p>
+            </div>
+        </div>
+        
+        <div class="status">
+            <strong>✅ Site Online e Funcionando!</strong><br>
+            <small>Sistema PGT hospedado no GitHub Pages</small>
+        </div>
+    </div>
+</body>
 </html>
