@@ -329,9 +329,9 @@ INSERT INTO system_settings (setting_key, setting_value, description) VALUES
 ('max_file_upload_size', '10485760', 'Tamanho máximo para upload');
 
 -- Usuário admin padrão (senha: admin123)
--- Hash bcrypt para 'admin123': $2b$10$rOKB5KMkY3qOp4KOp4KOp4KOp4KOp4KOp4KOp4KOp4KOp4KOp4KOp4
+-- Hash bcrypt para 'admin123': $2a$10$oBV7fdhWfA3VsXgT0St7iuqld0Tu6tzpcMhF7le7In48T3tRqG6FG
 INSERT INTO users (email, password_hash, full_name, cpf_cnpj, user_type, is_active, email_verified, data_processing_consent, consent_date) VALUES
-('admin@pgt-system.com', '$2b$10$rOKB5KMkY3qOp4KOp4KOp4KOp4KOp4KOp4KOp4KOp4KOp4KOp4KOp4', 'Administrador do Sistema', '00000000000', 'admin', true, true, true, CURRENT_TIMESTAMP);
+('admin@pgt-system.com', '$2a$10$oBV7fdhWfA3VsXgT0St7iuqld0Tu6tzpcMhF7le7In48T3tRqG6FG', 'Administrador do Sistema', '00000000000', 'admin', true, true, true, CURRENT_TIMESTAMP);
 
 -- Comentários
 COMMENT ON TABLE users IS 'Tabela principal de usuários do sistema';

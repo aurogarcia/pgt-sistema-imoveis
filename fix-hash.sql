@@ -1,0 +1,1 @@
+UPDATE users SET password_hash = '$2a$10$oBV7fdhWfA3VsXgT0St7iuqld0Tu6tzpcMhF7le7In48T3tRqG6FG' WHERE email = 'admin@pgt-system.com';
