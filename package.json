@@ -7,13 +7,13 @@
     "install:all": "cd backend && npm install && cd ../frontend && npm install",
     "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
     "build:frontend": "cd frontend && npm run build",
-    "build:backend": "cd backend && npm run build",
+    "build:backend": "cd backend && npm run build", 
     "build:all": "npm run build:backend && npm run build:frontend",
     "start:backend": "cd backend && npm start",
     "start:frontend": "cd frontend && npm run preview",
-    "deploy:prepare": "npm run build:all && npm run deploy:docs",
-    "deploy:docs": "rm -rf docs && mkdir docs && cp -r frontend/dist/* docs/ && echo 'Build copiado para docs/'",
-    "deploy:commit": "git add . && git commit -m '🚀 Deploy: Build de produção' && git push origin main",
+    "deploy:build": "cd frontend && npm run build",
+    "deploy:push": "git add . && git commit -m \"🚀 Deploy: Atualização\" && git push origin main",
+    "deploy": "npm run deploy:build && npm run deploy:push",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,6 +31,7 @@
     "rural-urban-properties",
     "ai-integration"
   ],
+  "homepage": "https://SEU_USUARIO.github.io/pgt-sistema/",
   "author": "Seu Nome",
   "license": "MIT",
   "bugs": {

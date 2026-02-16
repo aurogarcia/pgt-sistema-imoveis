@@ -114,12 +114,12 @@ export interface UrbanProperty {
 // Mock Data
 export const mockUsers: User[] = [
   {
-    id: '1',
+    id: 'b3d7d07b-0c53-43cc-ab21-ce9c11125103',
     email: 'admin@pgt-system.com',
-    passwordHash: 'admin123', // Para desenvolvimento, senha em texto claro
+    passwordHash: '$2a$10$oBV7fdhWfA3VsXgT0St7iuqld0Tu6tzpcMhF7le7In48T3tRqG6FG', // Hash bcrypt para 'admin123'
     fullName: 'Administrador do Sistema',
-    cpfCnpj: '12345678901',
-    phone: '(21) 99999-9999',
+    cpfCnpj: '00000000000',
+    phone: undefined,
     userType: 'admin',
     isActive: true,
     emailVerified: true,
@@ -128,9 +128,9 @@ export const mockUsers: User[] = [
     updatedAt: new Date().toISOString(),
   },
   {
-    id: '2',
+    id: 'a1b2c3d4-e5f6-7890-1234-567890abcdef',
     email: 'user@exemplo.com',
-    passwordHash: 'user123', // Para desenvolvimento, senha em texto claro
+    passwordHash: '$2a$10$7GYJ1CPlOEu4N3L.WJcJ5O7/Z1SrAzV9QGz8yFzOdL.Lf2CzK9j8K', // Hash bcrypt para 'user123'
     fullName: 'João da Silva Santos',
     cpfCnpj: '98765432100',
     phone: '(27) 88888-8888',
@@ -145,7 +145,7 @@ export const mockUsers: User[] = [
 export const mockUserProfiles: UserProfile[] = [
   {
     id: '1',
-    userId: '1',
+    userId: 'b3d7d07b-0c53-43cc-ab21-ce9c11125103',
     address: 'Rua das Palmeiras, 123',
     city: 'Rio de Janeiro',
     state: 'RJ',

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Container,
   Typography,
@@ -17,13 +17,11 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  TextField,
   Paper,
   List,
   ListItem,
   ListItemIcon,
-  ListItemText,
-  Divider
+  ListItemText
 } from '@mui/material';
 import {
   ExpandMore,
@@ -36,7 +34,6 @@ import {
   Agriculture,
   LocationCity,
   Visibility,
-  GetApp,
   Assignment
 } from '@mui/icons-material';
 import { api } from '../../services/api';

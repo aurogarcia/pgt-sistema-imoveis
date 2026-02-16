@@ -95,14 +95,20 @@ export function RuralPropertiesPage() {
   const loadProperties = async () => {
     try {
       setLoading(true);
+      setError(null); // Limpar erro anterior
       const response = await propertyService.getRuralProperties({ 
         page, 
         limit: 10 
       });
-      setProperties(response.items);
-      setTotalPages(response.pagination.totalPages);
+      setProperties(response.items || []);
+      setTotalPages(response.pagination?.totalPages || 1);
     } catch (err: any) {
-      setError(err.response?.data?.error || 'Erro ao carregar propriedades');
+      console.error('Erro ao carregar propriedades rurais:', err);
+      if (err.response?.status === 401) {
+        setError('Sessão expirada. Faça login novamente.');
+      } else {
+        setError(err.response?.data?.error || 'Erro ao carregar propriedades rurais');
+      }
     } finally {
       setLoading(false);
     }

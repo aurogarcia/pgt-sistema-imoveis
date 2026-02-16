@@ -99,7 +99,15 @@ export const urbanPropertySchema = Joi.object({
   floorsCount: Joi.number().integer().positive().default(1),
   roomsCount: Joi.number().integer().positive().optional(),
   bathroomsCount: Joi.number().integer().positive().optional(),
-  parkingSpaces: Joi.number().integer().min(0).default(0)
+  parkingSpaces: Joi.number().integer().min(0).default(0),
+  reurb: Joi.object({
+    modalityType: Joi.string().valid('social', 'commercial').optional(),
+    hasPossession: Joi.boolean().default(false),
+    hasInfrastructure: Joi.boolean().default(false),
+    hasUrbanServices: Joi.boolean().default(false),
+    isInRiskArea: Joi.boolean().default(false),
+    isInEnvironmentalProtectionArea: Joi.boolean().default(false)
+  }).optional()
 });
 
 // Schema para diagnóstico
