@@ -1,0 +1,32 @@
+{
+  "name": "pgt-sistema-railway",
+  "version": "1.0.0",
+  "description": "Sistema PGT - Full Stack com Railway Deploy",
+  "main": "backend/dist/app.js",
+  "scripts": {
+    "build": "cd backend && npm run build",
+    "start": "cd backend && npm start",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "deploy:prepare": "npm run build"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SEU_USUARIO/pgt-sistema-imoveis.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react",
+    "postgresql",
+    "real-estate",
+    "property-management",
+    "railway-deploy"
+  ],
+  "author": "Seu Nome",
+  "license": "MIT"
+}
