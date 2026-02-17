@@ -22,27 +22,37 @@ jobs:
       - name: 📦 Checkout
         uses: actions/checkout@v4
         
-      # Não precisamos mais do Node.js - usando HTML puro
-      # - name: 🚀 Setup Node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: '18'
-      #     cache: 'npm'
+      - name: 🚀 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
           
-      # - name: 📥 Instalar dependências
-      #   run: |
-      #     cd frontend
-      #     npm ci
+      - name: 📥 Instalar dependências Frontend
+        run: |
+          cd frontend
+          npm ci
           
-      # - name: 🔨 Build do frontend
-      #   run: |
-      #     cd frontend
-      #     npm run build:github
+      - name: 🔨 Build do Frontend React
+        run: |
+          cd frontend
+          npm run build:github
+          
+      - name: 📋 Preparar estrutura do site
+        run: |
+          # Criar pasta temporária para GitHub Pages
+          mkdir -p pages-build
+          
+          # Copiar index.html da raiz (MedidaGeo) como página principal
+          cp index.html pages-build/
+          
+          # Copiar build do frontend React para subpasta /app
+          cp -r frontend/dist pages-build/app
           
       - name: 📤 Upload build
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./
+          path: ./pages-build
 
   # Job para deploy
   deploy:
