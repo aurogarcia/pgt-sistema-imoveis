@@ -46,11 +46,8 @@ function App() {
         transition={{ duration: 0.3 }}
       >
         <Routes>
-          {/* Página inicial */}
-          <Route 
-            path="/" 
-            element={!user ? <HomePage /> : <Navigate to="/dashboard" replace />} 
-          />
+          {/* Página inicial - sempre mostra MedidaGeo */}
+          <Route path="/" element={<HomePage />} />
           
           {/* Rotas públicas */}
           <Route 
