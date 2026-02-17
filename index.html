@@ -3,48 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MedidaGeo - Funcionando!</title>
+    <title>MedidaGeo - Topografia & Geotecnologia Avançada</title>
     <style>
         body {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0f23, #1a1a3e, #2d4a87, #4a90e2);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease-in-out infinite;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: white;
             text-align: center;
-            padding: 50px 20px;
+            padding: 30px 20px;
             margin: 0;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 255, 120, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 120, 120, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 120, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
         
         .logo {
             font-size: 4rem;
             margin-bottom: 20px;
+            animation: pulse 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(74, 144, 226, 0.5));
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
         
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 0 0 30px rgba(74, 144, 226, 0.8), 2px 2px 4px rgba(0,0,0,0.5);
+            background: linear-gradient(45deg, #4a90e2, #50c878, #4a90e2);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textShine 4s ease-in-out infinite;
+            font-weight: bold;
+        }
+        
+        @keyframes textShine {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
         
         .subtitle {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            font-weight: 300;
+            text-shadow: 0 0 15px rgba(80, 200, 120, 0.6);
+        }
+        
+        .subtitle-tech {
+            font-size: 1.1rem;
             margin-bottom: 30px;
-            opacity: 0.9;
+            opacity: 0.85;
+            font-style: italic;
+            color: #a8d8ff;
         }
         
         .status {
-            background: rgba(76, 175, 80, 0.3);
-            border: 2px solid rgba(76, 175, 80, 0.7);
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px 0;
-            font-size: 1.2rem;
-            max-width: 600px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 2px solid rgba(74, 144, 226, 0.6);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 25px 0;
+            font-size: 1.3rem;
+            max-width: 700px;
             width: 100%;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(74, 144, 226, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .status::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #4a90e2, #50c878, #4a90e2, #50c878);
+            background-size: 400% 400%;
+            animation: borderShine 3s ease-in-out infinite;
+            border-radius: 20px;
+            z-index: -1;
+        }
+        
+        @keyframes borderShine {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
         
         .services {
@@ -57,35 +133,74 @@
         }
         
         .service {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 15px;
-            padding: 20px;
-            transition: transform 0.3s;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(74, 144, 226, 0.4);
+            border-radius: 20px;
+            padding: 25px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(74, 144, 226, 0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .service:hover::before {
+            left: 100%;
         }
         
         .service:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(74, 144, 226, 0.4);
+            border-color: rgba(74, 144, 226, 0.8);
         }
         
         .btn {
-            background: linear-gradient(45deg, #4CAF50, #45a049);
+            background: linear-gradient(45deg, #4a90e2, #50c878);
             color: white;
             text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 25px;
+            padding: 18px 35px;
+            border-radius: 30px;
             font-weight: bold;
             font-size: 1.1rem;
             display: inline-block;
-            margin: 10px;
-            transition: all 0.3s;
-            border: none;
+            margin: 12px;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
         }
         
         .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.4);
+            border-color: rgba(255,255,255,0.3);
         }
         
         .timestamp {
@@ -96,31 +211,41 @@
     </style>
 </head>
 <body>
-    <div class="logo">🏗️</div>
+    <div class="logo">🛰️</div>
     <h1>MedidaGeo</h1>
-    <div class="subtitle">Engenharia & Georreferenciamento</div>
+    <div class="subtitle">Topografia & Geotecnologia</div>
+    <div class="subtitle-tech">Soluções Avançadas em Georreferenciamento | Tecnologia de Ponta</div>
     
     <div class="status">
-        ✅ SISTEMA ONLINE E FUNCIONANDO!<br>
-        🚀 Deploy realizado com sucesso
+        🛰️ PLATAFORMA GEOTEC ONLINE!<br>
+        🎯 Tecnologia Avançada em Operação<br>
+        📡 Conectado aos Satélites GNSS
     </div>
     
     <div class="services">
         <div class="service">
-            <h3>🗺️ Georreferenciamento</h3>
-            <p>Medições precisas para propriedades rurais e urbanas</p>
+            <h3>�️ Georreferenciamento GNSS</h3>
+            <p>Precisão centimétrica com tecnologia RTK/PPK</p>
         </div>
         <div class="service">
-            <h3>📊 Análise Espacial</h3>
-            <p>Estudos topográficos detalhados</p>
+            <h3>🌐 Topografia Digital</h3>
+            <p>Drones, LiDAR e modelagem 3D avançada</p>
         </div>
         <div class="service">
-            <h3>🛡️ Regularização</h3>
-            <p>Assessoria completa em documentação</p>
+            <h3>📡 Geotecnologia</h3>
+            <p>SIG, sensoriamento remoto e análise espacial</p>
         </div>
         <div class="service">
-            <h3>🤖 Tecnologia IA</h3>
-            <p>Sistema PGT com automação</p>
+            <h3>🤖 IA Geoespacial</h3>
+            <p>Inteligência artificial para análise territorial</p>
+        </div>
+        <div class="service">
+            <h3>📱 Soluções Mobile</h3>
+            <p>Aplicativos de campo e coleta de dados</p>
+        </div>
+        <div class="service">
+            <h3>⚡ Processamento Cloud</h3>
+            <p>Computação em nuvem para grandes projetos</p>
         </div>
     </div>
     
