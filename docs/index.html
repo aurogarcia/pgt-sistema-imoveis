@@ -3,143 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema PGT - Gestão de Imóveis</title>
+    <title>MedidaGeo - Funcionando!</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            margin: 0;
             min-height: 100vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            color: white;
+            align-items: center;
         }
         
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 3rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
-            margin: 2rem;
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 20px;
         }
         
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
         .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #f0f0f0;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .feature {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 1.5rem;
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-        }
-        
-        .feature:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: #ffffff;
-        }
-        
-        .feature p {
-            font-size: 0.9rem;
-            color: #e0e0e0;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
         }
         
         .status {
-            margin-top: 2rem;
-            padding: 1rem;
             background: rgba(76, 175, 80, 0.3);
-            border-radius: 10px;
-            border: 1px solid rgba(76, 175, 80, 0.5);
+            border: 2px solid rgba(76, 175, 80, 0.7);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 1.2rem;
+            max-width: 600px;
+            width: 100%;
         }
         
-        .emoji {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            width: 100%;
+            margin: 30px 0;
         }
         
-        @media (max-width: 768px) {
-            .container {
-                padding: 2rem;
-                margin: 1rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-            }
+        .service {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 15px;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .service:hover {
+            transform: translateY(-5px);
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin: 10px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .timestamp {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            opacity: 0.7;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="emoji">🏡</div>
-        <h1>Sistema PGT</h1>
-        <p class="subtitle">Sistema de Gestão de Imóveis Rurais e Urbanos</p>
-        
-        <div class="features">
-            <div class="feature">
-                <h3>🏚️ Imóveis Rurais</h3>
-                <p>Gestão completa de propriedades rurais</p>
-            </div>
-            <div class="feature">
-                <h3>🏢 Imóveis Urbanos</h3>
-                <p>Controle de propriedades urbanas</p>
-            </div>
-            <div class="feature">
-                <h3>🤖 IA Integrada</h3>
-                <p>Diagnósticos automatizados</p>
-            </div>
-            <div class="feature">
-                <h3>📊 Relatórios IRTR</h3>
-                <p>Geração automática de relatórios</p>
-            </div>
+    <div class="logo">🏗️</div>
+    <h1>MedidaGeo</h1>
+    <div class="subtitle">Engenharia & Georreferenciamento</div>
+    
+    <div class="status">
+        ✅ SISTEMA ONLINE E FUNCIONANDO!<br>
+        🚀 Deploy realizado com sucesso
+    </div>
+    
+    <div class="services">
+        <div class="service">
+            <h3>🗺️ Georreferenciamento</h3>
+            <p>Medições precisas para propriedades rurais e urbanas</p>
         </div>
-        
-        <div class="status">
-            <strong>✅ Site Online e Funcionando!</strong><br>
-            <small>Sistema PGT hospedado no GitHub Pages</small>
+        <div class="service">
+            <h3>📊 Análise Espacial</h3>
+            <p>Estudos topográficos detalhados</p>
         </div>
-        
-        <div class="nav-section" style="margin-top: 2rem;">
-            <h3 style="margin-bottom: 1rem;">🚀 Navegar pelo Sistema</h3>
-            <div class="nav-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-                <a href="login.html" style="background: rgba(33, 150, 243, 0.8); color: white; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 10px; transition: background 0.3s ease;">🔐 Login</a>
-                <a href="dashboard.html" style="background: rgba(76, 175, 80, 0.8); color: white; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 10px; transition: background 0.3s ease;">📊 Dashboard</a>
-                <a href="test.html" style="background: rgba(255, 152, 0, 0.8); color: white; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 10px; transition: background 0.3s ease;">🧪 Teste</a>
-            </div>
+        <div class="service">
+            <h3>🛡️ Regularização</h3>
+            <p>Assessoria completa em documentação</p>
+        </div>
+        <div class="service">
+            <h3>🤖 Tecnologia IA</h3>
+            <p>Sistema PGT com automação</p>
         </div>
     </div>
+    
+    <div>
+        <a href="app/" class="btn">🔐 Acessar Sistema PGT</a>
+        <a href="mailto:contato@medidageo.com.br" class="btn">📧 Entrar em Contato</a>
+        <a href="tel:+5527999999999" class="btn">📱 Ligar Agora</a>
+    </div>
+    
+    <div class="timestamp">
+        ⏰ Última atualização: <span id="time"></span>
+    </div>
+    
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleString('pt-BR');
+        console.log('🏗️ MedidaGeo carregado em:', new Date().toISOString());
+        
+        // Test if it's loading
+        setTimeout(() => {
+            console.log('✅ Página funcionando perfeitamente!');
+        }, 1000);
+    </script>
 </body>
 </html>
