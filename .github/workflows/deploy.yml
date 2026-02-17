@@ -22,26 +22,27 @@ jobs:
       - name: 📦 Checkout
         uses: actions/checkout@v4
         
-      - name: 🚀 Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
+      # Não precisamos mais do Node.js - usando HTML puro
+      # - name: 🚀 Setup Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: '18'
+      #     cache: 'npm'
           
-      - name: 📥 Instalar dependências
-        run: |
-          cd frontend
-          npm ci
+      # - name: 📥 Instalar dependências
+      #   run: |
+      #     cd frontend
+      #     npm ci
           
-      - name: 🔨 Build do frontend
-        run: |
-          cd frontend
-          npm run build:github
+      # - name: 🔨 Build do frontend
+      #   run: |
+      #     cd frontend
+      #     npm run build:github
           
       - name: 📤 Upload build
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./frontend/dist
+          path: ./
 
   # Job para deploy
   deploy:
