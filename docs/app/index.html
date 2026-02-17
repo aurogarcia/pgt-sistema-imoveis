@@ -3,51 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MedidaGeo - Engenharia e Georreferenciamento</title>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <meta name="timestamp" content="">
-    
+    <title>Sistema PGT - Dashboard</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: white;
-            overflow-x: hidden;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .container {
             max-width: 1200px;
-            width: 90%;
-            text-align: center;
+            margin: 0 auto;
             padding: 2rem;
         }
         
-        .logo-container {
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #4a90e2, #50c878);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(74, 144, 226, 0.4);
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .metric {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .metric h4 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric span {
+            opacity: 0.8;
+        }
+        
+        .welcome {
+            text-align: center;
             margin-bottom: 3rem;
         }
         
-        .logo {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 2rem;
-            filter: drop-shadow(0 8px 32px rgba(0,0,0,0.3));
+        .welcome h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
         
-        h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            color: white !important;
+        .welcome p {
+            font-size: 1.2rem;
+            opacity: 0.9;
         }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>🏢 Sistema PGT - Gestão de Imóveis</h2>
+    </div>
+    
+    <div class="container">
+        <div class="welcome">
+            <h1>🚀 Bem-vindo ao Sistema PGT</h1>
+            <p>Sistema completo para gestão de propriedades rurais e urbanas</p>
+        </div>
+        
+        <div class="metrics">
+            <div class="metric">
+                <h4>142</h4>
+                <span>Propriedades Rurais</span>
+            </div>
+            <div class="metric">
+                <h4>89</h4>
+                <span>Propriedades Urbanas</span>
+            </div>
+            <div class="metric">
+                <h4>25</h4>
+                <span>Diagnósticos IA</span>
+            </div>
+            <div class="metric">
+                <h4>8</h4>
+                <span>Relatórios IRTR</span>
+            </div>
+        </div>
+        
+        <div class="dashboard">
+            <div class="card">
+                <h3>🏡 Propriedades Rurais</h3>
+                <p>Gerencie propriedades rurais, cadastre novos imóveis e acompanhe regularizações.</p>
+                <button class="btn" onclick="showModule('rural')">Acessar Módulo</button>
+            </div>
+            
+            <div class="card">
+                <h3>🏙️ Propriedades Urbanas</h3>
+                <p>Controle propriedades urbanas, documentação e processos de regularização.</p>
+                <button class="btn" onclick="showModule('urban')">Acessar Módulo</button>
+            </div>
+            
+            <div class="card">
+                <h3>🤖 Diagnósticos IA</h3>
+                <p>Análises automatizadas com inteligência artificial para diagnósticos precisos.</p>
+                <button class="btn" onclick="showModule('ai')">Gerar Diagnóstico</button>
+            </div>
+            
+            <div class="card">
+                <h3>📊 Relatórios IRTR</h3>
+                <p>Geração e gestão de relatórios IRTR para propriedades rurais.</p>
+                <button class="btn" onclick="showModule('irtr')">Ver Relatórios</button>
+            </div>
+            
+            <div class="card">
+                <h3>🗺️ Georreferenciamento</h3>
+                <p>Serviços de georreferenciamento e medições topográficas precisas.</p>
+                <button class="btn" onclick="showModule('geo')">Acessar Serviços</button>
+            </div>
+            
+            <div class="card">
+                <h3>📋 Documentos</h3>
+                <p>Gestão de documentos, certidões e comprovações necessárias.</p>
+                <button class="btn" onclick="showModule('docs')">Gerenciar Docs</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showModule(module) {
+            switch(module) {
+                case 'rural':
+                    alert('🏡 Módulo de Propriedades Rurais\n\n• Cadastro de propriedades\n• Gestão de documentos\n• Acompanhamento de regularização\n• Relatórios e análises\n\nFuncionalidade será implementada em breve!');
+                    break;
+                case 'urban':
+                    alert('🏙️ Módulo de Propriedades Urbanas\n\n• Cadastro de imóveis urbanos\n• Documentação municipal\n• Certidões e alvarás\n• Histórico de propriedades\n\nFuncionalidade será implementada em breve!');
+                    break;
+                case 'ai':
+                    alert('🤖 Diagnósticos com IA\n\n• Análise automatizada\n• Detecção de irregularidades\n• Recomendações personalizadas\n• Relatórios inteligentes\n\nProcessando com inteligência artificial...');
+                    break;
+                case 'irtr':
+                    alert('📊 Relatórios IRTR\n\n• Geração automática\n• Dados atualizados\n• Conformidade fiscal\n• Download em PDF\n\nSistema de relatórios em desenvolvimento!');
+                    break;
+                case 'geo':
+                    alert('🗺️ Georreferenciamento\n\n• Levantamentos topográficos\n• Memorial descritivo\n• Coordenadas SIRGAS 2000\n• Integração SIGEF/SNCR\n\nServiços de campo disponíveis!');
+                    break;
+                case 'docs':
+                    alert('📋 Gestão de Documentos\n\n• Upload seguro\n• Organização automática\n• Controle de versões\n• Assinatura digital\n\nSistema documental em implementação!');
+                    break;
+            }
+        }
+        
+        // Animação de loading
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Sistema PGT carregado com sucesso!');
+            
+            // Simular dados em tempo real
+            setTimeout(() => {
+                console.log('📊 Conectado ao sistema de dados');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
         
         .subtitle {
             font-size: clamp(1.2rem, 3vw, 1.8rem);
