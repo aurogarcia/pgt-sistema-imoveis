@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚨 TESTE MEDIDAGEO - DEPLOYADO</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .status {
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid rgba(76, 175, 80, 0.5);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 1.3rem;
+        }
+        
+        .info {
+            color: rgba(255,255,255,0.9);
+            line-height: 1.6;
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white !important;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 5px;
+            transition: transform 0.2s;
+        }
+        
+        .btn:hover { transform: translateY(-2px); }
+        
+        .timestamp {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🏗️ MedidaGeo</h1>
+        
+        <div class="status">
+            ✅ DEPLOY CONFIRMADO!<br>
+            🚀 Sistema Online
+        </div>
+        
+        <div class="info">
+            <strong>Teste de Funcionamento</strong><br>
+            Se você está vendo esta página, o sistema está funcionando perfeitamente!
+            
+            <div style="margin: 20px 0;">
+                <a href="./" class="btn">🏠 Ir para MedidaGeo</a>
+                <a href="./teste-medidageo.html" class="btn">📋 Teste Original</a>
+            </div>
+        </div>
+        
+        <div class="timestamp">
+            Gerado automaticamente em: <span id="time"></span>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleString('pt-BR');
+        console.log('🚨 TESTE URGENTE carregado:', new Date().toISOString());
+    </script>
+</body>
+</html>
