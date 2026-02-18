@@ -15,17 +15,17 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Job para deploy direto da raiz
+  # Job para deploy direto da pasta docs (como estava funcionando antes)
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: 📦 Checkout
         uses: actions/checkout@v4
         
-      - name: 📤 Upload arquivos
+      - name: 📤 Upload pasta docs
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ./docs
           
       - name: 🌐 Deploy para GitHub Pages
         id: deployment
