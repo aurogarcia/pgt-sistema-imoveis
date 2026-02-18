@@ -1,0 +1,26 @@
+title: "MedidaGeo - Sistema PGT"
+description: "Sistema de gestão de imóveis rurais e urbanos com topografia avançada"
+
+# GitHub Pages settings
+source: .
+destination: _site
+keep_files: [docs]
+
+# Build settings  
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude files
+exclude:
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - .git/
+  - .github/
+  - backend/
+  - frontend/
+  - database/
