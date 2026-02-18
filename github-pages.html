@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedidaGeo - Topografia & Geotecnologia Avançada</title>
+    <meta name="description" content="MedidaGeo - Empresa líder em topografia, georreferenciamento e geotecnologia avançada">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0f23, #1a1a3e, #2d4a87, #4a90e2);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease-in-out infinite;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 255, 120, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 120, 120, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 120, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: pulse 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(74, 144, 226, 0.5));
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin: 20px 0;
+            font-weight: 700;
+            background: linear-gradient(45deg, #fff, #4a90e2, #87ceeb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleGlow 4s ease-in-out infinite;
+        }
+        
+        @keyframes titleGlow {
+            0%, 100% { filter: drop-shadow(0 0 15px rgba(74, 144, 226, 0.5)); }
+            50% { filter: drop-shadow(0 0 25px rgba(135, 206, 235, 0.8)); }
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            width: 100%;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: left;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(74, 144, 226, 0.2);
+            border-color: rgba(74, 144, 226, 0.6);
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #87ceeb;
+        }
+        
+        .service-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .cta-section {
+            margin-top: 50px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #4a90e2, #87ceeb);
+            color: white;
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(74, 144, 226, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.1rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .cta-section { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">🛰️</div>
+    <h1>MedidaGeo</h1>
+    <p class="subtitle">Topografia & Geotecnologia Avançada</p>
+    
+    <div class="services-grid">
+        <div class="service-card">
+            <span class="service-icon">📍</span>
+            <h3 class="service-title">GNSS/GPS Precision</h3>
+            <p class="service-description">Posicionamento geográfico de alta precisão com equipamentos RTK e tecnologia satelital avançada para mapeamentos milimétricos.</p>
+        </div>
+        
+        <div class="service-card">
+            <span class="service-icon">🗺️</span>
+            <h3 class="service-title">Topografia Digital</h3>
+            <p class="service-description">Levantamentos topográficos computadorizados com drones, estações totais robóticas e processamento digital de dados.</p>
+        </div>
+        
+        <div class="service-card">
+            <span class="service-icon">🌐</span>
+            <h3 class="service-title">Geotecnologia</h3>
+            <p class="service-description">Soluções em geoprocessamento, sensoriamento remoto e análise espacial para projetos de grande escala.</p>
+        </div>
+        
+        <div class="service-card">
+            <span class="service-icon">🤖</span>
+            <h3 class="service-title">IA Geoespacial</h3>
+            <p class="service-description">Inteligência artificial aplicada à análise de dados geográficos, automatização de processos e predição territorial.</p>
+        </div>
+        
+        <div class="service-card">
+            <span class="service-icon">📱</span>
+            <h3 class="service-title">Soluções Mobile</h3>
+            <p class="service-description">Aplicativos móveis para coleta de dados em campo, sincronização em tempo real e relatórios instantâneos.</p>
+        </div>
+        
+        <div class="service-card">
+            <span class="service-icon">☁️</span>
+            <h3 class="service-title">Cloud Processing</h3>
+            <p class="service-description">Processamento em nuvem de grandes volumes de dados geográficos com armazenamento seguro e acesso remoto.</p>
+        </div>
+    </div>
+    
+    <div class="cta-section">
+        <a href="docs/app/" class="btn btn-primary">🏠 Acessar Sistema PGT</a>
+        <a href="#contato" class="btn btn-secondary">📧 Entre em Contato</a>
+    </div>
+</body>
+</html>
