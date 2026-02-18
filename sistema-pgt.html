@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema PGT - Acesso Direto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏠 Sistema PGT - Acesso Direto</h1>
+        <p>Esta é uma versão simplificada de acesso direto ao Sistema PGT</p>
+        <br>
+        <div>
+            <a href="app/" class="btn">📱 Tentar App/</a>
+            <a href="docs/app/" class="btn">📁 Tentar docs/app/</a>
+            <a href="app/teste.html" class="btn">🧪 Página Teste</a>
+        </div>
+        <br>
+        <div>
+            <a href="/" class="btn">🏠 Voltar à MedidaGeo</a>
+        </div>
+        <br>
+        <p style="font-size: 14px; opacity: 0.8;">
+            ⏰ Última atualização: <span id="time"></span>
+        </p>
+    </div>
+    
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleString('pt-BR');
+        console.log('Sistema PGT carregado:', new Date());
+        
+        // Log para debug
+        console.log('URLs disponíveis:');
+        console.log('- app/');
+        console.log('- docs/app/');
+        console.log('- app/teste.html');
+    </script>
+</body>
+</html>
