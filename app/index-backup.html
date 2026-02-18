@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedidaGeo - Engenharia e Georreferenciamento</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .logo-container {
+            margin-bottom: 3rem;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            filter: drop-shadow(0 8px 32px rgba(0,0,0,0.3));
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .description {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .service {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .service p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+        }
+        
+        .cta-section {
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid rgba(76, 175, 80, 0.4);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            background: linear-gradient(135deg, #8a9df7, #9a73c7);
+        }
+        
+        .status {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(76, 175, 80, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .services { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .status { position: static; margin-bottom: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="status">✅ Online</div>
+    
+    <div class="container">
+        <div class="logo-container">
+            <svg class="logo" viewBox="0 0 120 120">
+                <defs>
+                    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+                        <stop offset="100%" stop-color="#ffffff" stop-opacity="0.6" />
+                    </linearGradient>
+                    <linearGradient id="logoGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#667eea" />
+                        <stop offset="100%" stop-color="#764ba2" />
+                    </linearGradient>
+                </defs>
+                <circle cx="60" cy="60" r="55" fill="url(#logoGrad)" fill-opacity="0.2" stroke="url(#logoGrad)" stroke-width="2" />
+                <circle cx="45" cy="45" r="8" fill="url(#logoGrad2)" />
+                <circle cx="75" cy="45" r="6" fill="url(#logoGrad2)" fill-opacity="0.8" />
+                <circle cx="60" cy="75" r="10" fill="url(#logoGrad2)" />
+                <line x1="45" y1="45" x2="75" y2="45" stroke="url(#logoGrad)" stroke-width="2" stroke-opacity="0.6" />
+                <line x1="45" y1="45" x2="60" y2="75" stroke="url(#logoGrad)" stroke-width="2" stroke-opacity="0.6" />
+                <line x1="75" y1="45" x2="60" y2="75" stroke="url(#logoGrad)" stroke-width="2" stroke-opacity="0.6" />
+                <path d="M55,55 L65,55 L65,65 L55,65 Z" fill="url(#logoGrad)" fill-opacity="0.8" />
+            </svg>
+        </div>
+        
+        <h1>MedidaGeo</h1>
+        <div class="subtitle">Engenharia e Georreferenciamento</div>
+        <div class="description">
+            Especialistas em medições rurais, topografia e regularização fundiária<br>
+            <strong>Tecnologia avançada • Precisão cartográfica • Soluções completas</strong>
+        </div>
+        
+        <div class="services">
+            <div class="service">
+                <div class="service-icon">🗺️</div>
+                <h3>Georreferenciamento</h3>
+                <p>Medições precisas e mapeamento territorial com tecnologia de ponta</p>
+            </div>
+            <div class="service">
+                <div class="service-icon">📊</div>
+                <h3>Análise Espacial</h3>
+                <p>Estudos topográficos e análises detalhadas de área</p>
+            </div>
+            <div class="service">
+                <div class="service-icon">🛡️</div>
+                <h3>Regularização</h3>
+                <p>Assessoria completa em regularização fundiária</p>
+            </div>
+            <div class="service">
+                <div class="service-icon">🤖</div>
+                <h3>Tecnologia IA</h3>
+                <p>Automação e precisão em todos os processos</p>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h2>✅ Sistema PGT Disponível</h2>
+            <p>Acesse nossa plataforma completa para gestão e regularização de propriedades</p>
+            
+            <div class="cta-buttons">
+                <a href="#" onclick="window.location.hash = '/login';" class="btn">
+                    🚀 Acessar Sistema PGT
+                </a>
+                <a href="mailto:contato@medidageo.com.br" class="btn">
+                    📧 Entrar em Contato
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        console.log("🏗️ MedidaGeo carregado com sucesso!");
+        
+        // Verificar se o hash mudou para carregar React
+        if (window.location.hash) {
+            console.log("Hash detectado, carregando aplicação React...");
+            // Aqui carregaria o React se necessário
+        }
+        
+        // Force reload on cache issues
+        if (performance.navigation.type === 1) {
+            console.log("Página recarregada pelo usuário");
+        }
+    </script>
+</body>
+</html>

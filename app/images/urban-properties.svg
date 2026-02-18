@@ -1,0 +1,90 @@
+<svg width="320" height="240" viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="building1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#374151"/>
+    </linearGradient>
+    <linearGradient id="building2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="320" height="240" fill="url(#sky-grad)" rx="8"/>
+  
+  <!-- Smart city buildings -->
+  <rect x="40" y="120" width="35" height="120" fill="url(#building1)" rx="2"/>
+  <rect x="85" y="100" width="30" height="140" fill="url(#building2)" rx="2"/>
+  <rect x="125" y="80" width="40" height="160" fill="url(#building1)" rx="2"/>
+  <rect x="175" y="110" width="35" height="130" fill="url(#building2)" rx="2"/>
+  <rect x="220" y="90" width="32" height="150" fill="url(#building1)" rx="2"/>
+  <rect x="260" y="130" width="28" height="110" fill="url(#building2)" rx="2"/>
+  
+  <!-- Windows with smart lighting -->
+  <g opacity="0.8">
+    <!-- Building 1 -->
+    <rect x="45" y="130" width="4" height="4" fill="#fbbf24"/>
+    <rect x="52" y="130" width="4" height="4" fill="#60a5fa"/>
+    <rect x="59" y="130" width="4" height="4" fill="#34d399"/>
+    <rect x="45" y="150" width="4" height="4" fill="#60a5fa"/>
+    <rect x="59" y="150" width="4" height="4" fill="#fbbf24"/>
+    
+    <!-- Building 2 -->
+    <rect x="90" y="110" width="3" height="3" fill="#fbbf24"/>
+    <rect x="96" y="110" width="3" height="3" fill="#60a5fa"/>
+    <rect x="102" y="110" width="3" height="3" fill="#34d399"/>
+    
+    <!-- Building 3 -->
+    <rect x="130" y="90" width="5" height="5" fill="#60a5fa"/>
+    <rect x="140" y="90" width="5" height="5" fill="#fbbf24"/>
+    <rect x="150" y="90" width="5" height="5" fill="#34d399"/>
+    <rect x="130" y="110" width="5" height="5" fill="#34d399"/>
+    <rect x="150" y="110" width="5" height="5" fill="#60a5fa"/>
+  </g>
+  
+  <!-- Smart infrastructure -->
+  <!-- Smart traffic light -->
+  <rect x="180" y="210" width="3" height="15" fill="#6b7280"/>
+  <circle cx="181.5" cy="220" r="2" fill="#ef4444"/>
+  <circle cx="181.5" cy="215" r="2" fill="#fbbf24"/>
+  <circle cx="181.5" cy="210" r="2" fill="#22c55e"/>
+  
+  <!-- Street with IoT sensors -->
+  <rect x="0" y="225" width="320" height="15" fill="#374151"/>
+  <rect x="0" y="235" width="320" height="2" fill="#fbbf24"/>
+  
+  <!-- IoT devices -->
+  <circle cx="60" cy="220" r="1.5" fill="#3b82f6"/>
+  <circle cx="120" cy="222" r="1.5" fill="#22d3ee"/>
+  <circle cx="200" cy="220" r="1.5" fill="#34d399"/>
+  <circle cx="280" cy="221" r="1.5" fill="#fbbf24"/>
+  
+  <!-- Network connections between IoT -->
+  <path d="M60 220 Q90 200 120 222" stroke="#60a5fa" stroke-width="1" fill="none" opacity="0.4"/>
+  <path d="M120 222 Q160 205 200 220" stroke="#22d3ee" stroke-width="1" fill="none" opacity="0.4"/>
+  <path d="M200 220 Q240 210 280 221" stroke="#34d399" stroke-width="1" fill="none" opacity="0.4"/>
+  
+  <!-- Drone/aerial surveillance -->
+  <ellipse cx="250" cy="40" rx="6" ry="2" fill="#e5e7eb"/>
+  <rect x="247" y="39" width="6" height="1" fill="#6b7280"/>
+  <circle cx="244" cy="40" r="0.8" fill="#3b82f6"/>
+  <circle cx="256" cy="40" r="0.8" fill="#3b82f6"/>
+  
+  <!-- Data visualization overlay -->
+  <rect x="20" y="30" width="80" height="50" fill="rgba(255,255,255,0.1)" rx="4" stroke="#60a5fa" stroke-width="1"/>
+  <text x="25" y="45" fill="white" font-family="system-ui" font-size="10" font-weight="600">Smart City</text>
+  <rect x="25" y="50" width="30" height="2" fill="#34d399" rx="1"/>
+  <rect x="25" y="55" width="45" height="2" fill="#60a5fa" rx="1"/>
+  <rect x="25" y="60" width="20" height="2" fill="#fbbf24" rx="1"/>
+  <rect x="25" y="65" width="35" height="2" fill="#f87171" rx="1"/>
+  
+  <!-- Satellites/GPS -->
+  <circle cx="280" cy="25" r="2" fill="#fbbf24"/>
+  <circle cx="280" cy="25" r="8" fill="none" stroke="#fbbf24" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="280" cy="25" r="15" fill="none" stroke="#fbbf24" stroke-width="0.5" opacity="0.2"/>
+</svg>
